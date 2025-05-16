@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output1.css">
+</head>
+<body>
+    <div class="min-h-screen  bg-gray-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl w-full space-y-8 bg-gray-200 p-8 rounded-lg shadow-md">
+            <div>
+                <h2 class="text-center text-3xl font-extrabold text-gray-900">IT Job Application Form</h2>
+                <p class="mt-2 text-center text-2xl text-gray-900">
+                    Apply for IT opportunities with your complete details
+                </p>
+            </div>
+            <div class="mt-8 space-y-6">
+                <!-- Personal Details -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900">Personal Details</h3>
+                    <div class="mt-4 space-y-4">
+                        <div>
+                            <label for="full-name" class="block text-sm font-medium text-gray-900">Full Name</label>
+                            <input id="full-name" name="full-name" type="text" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                   placeholder="Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-900">Email Address</label>
+                            <input id="email" name="email" type="email" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                   placeholder="@email.com">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-900">Phone Number</label>
+                            <input id="phone" name="phone" type="tel" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                   placeholder="+91 98765 43210">
+                        </div>
+                        <div>
+                            <label for="address" class="block text-sm font-medium text-gray-900">Address</label>
+                            <textarea id="address" name="address" rows="3" required
+                                      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                      placeholder="123 Main St, City, Country"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Details -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900">Education Details</h3>
+                    <div class="mt-4 space-y-4">
+                        <div>
+                            <label for="degree" class="block text-sm font-medium text-gray-900">Degree (e.g., B.Tech, M.Sc)</label>
+                            <input id="degree" name="degree" type="text" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                   placeholder="B.Tech in Computer Science">
+                        </div>
+                        <div>
+                            <label for="university" class="block text-sm font-medium text-gray-900">University/Institute</label>
+                            <input id="university" name="university" type="text" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                   placeholder="Example University">
+                        </div>
+                        <div>
+                            <label for="percentage" class="block text-sm font-medium text-gray-900">Percentage/CGPA</label>
+                            <input id="percentage" name="percentage" type="text" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                   placeholder="85% or 8.5 CGPA">
+                        </div>
+                        <div>
+                            <label for="grad-year" class="block text-sm font-medium text-gray-900">Year of Graduation</label>
+                            <input id="grad-year" name="grad-year" type="number" min="2000" max="2025" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                   placeholder="2023">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job-Related Details -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900">Job-Related Details</h3>
+                    <div class="mt-4 space-y-4">
+                        <div>
+                            <label for="position" class="block text-sm font-medium text-gray-900">Position Applied For</label>
+                            <select id="position" name="position" required
+                                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option value=" disabled selected">Select Position</option>
+                                <option value="software-engineer">Software Engineer</option>
+                                <option value="data-analyst">Data Analyst</option>
+                                <option value="devops-engineer">DevOps Engineer</option>
+                                <option value="ui-ux-designer">UI Designer</option>
+                                <option value="cybersecurity-analyst">Cybersecurity Analyst</option>
+                                <option value="Data Scientist">Data Scientist</option>
+                                <option value="Marketing Specialist">Marketing Specialist</option>
+                                <option value="Product Manager">Product Manager</option>
+                                <option value="Web Designer">Web Designer</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="experience" class="block text-sm font-medium text-gray-900">Years of Experience</label>
+                            <input id="experience" name="experience" type="number" min="0" max="50" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                   placeholder="2">
+                        </div>
+                        <div>
+                            <label for="skills" class="block text-sm font-medium text-gray-900">Key Skills</label>
+                            <textarea id="skills" name="skills" rows="3" required
+                                      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                      placeholder="Python, JavaScript, AWS, SQL"></textarea>
+                        </div>
+                        <div>
+                            <label for="resume" class="block text-sm font-medium text-gray-900">Upload Resume</label>
+                            <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <a herf="apply" type="button"
+                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Submit Application
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

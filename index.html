@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Dream Job</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class=" font-sans antialiased scroll-behavior:smooth">
+    <!-- Header -->
+    <header class="bg-gray-900 shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="995605b2c8d8d96e10a6d46263d29a7a.jpg" alt="TechJobs Logo" class="h-12 w-auto">
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-white hover:text-blue-600 font-medium transition duration-200">Home</a>
+                <a href="#jobs" class="text-white hover:text-blue-600 font-medium transition duration-200">Jobs</a>
+                <a href="#contact" class="text-white hover:text-blue-600 font-medium transition duration-200">Contact</a>
+                <a href="login.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">Login</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-blue-gray shadow-md">
+            <div class="flex flex-col items-center py-6 space-y-4">
+                <a href="#home" class="text-white hover:text-blue-600 font-medium text-lg">Home</a>
+                <a href="#jobs" class="text-white hover:text-blue-600 font-medium text-lg">Jobs</a>
+                <a href="#contact" class="text-white hover:text-blue-600 font-medium text-lg">Contact</a>
+                <a href="login.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold text-lg hover:bg-blue-700">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gray-600 text-off-white py-24 md:py-32 overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <!-- Main Heading and Content -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-fade-in-up">Find Your Dream Tech Job</h1>
+        </div>
+    </section>
+
+    <!-- Job Search Section -->
+    <section id="jobs" class="py-16 sm:py-16 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-16 lg:px-8">
+            <h2 class="text-3xl text-white text-center sm:text-2xl lg:text-5xl font-bold mb-8">Jobs</h2>
+            <!-- Search Bar -->
+            <div class="flex justify-center mb-8">
+                <div class="relative w-full max-w-5xl">
+                    <input 
+                        type="text" 
+                        id="search-bar" 
+                        placeholder="Search jobs (e.g., Software Engineer, UX Designer)" 
+                        class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 text-lg"
+                        oninput="searchJobs()"
+                        aria-label="Search for jobs"
+                    >
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/4 bg-blue-600 text-white p-2 rounded-lg" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Job Listings -->
+            <section class=" rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
+                <h2 class="text-xl text-white  sm:text-2xl md:text-3xl font-bold mb-8">Job Listings</h2>
+                <div id="job-listings" class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Job 1 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Software Engineer, TechCorp">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Software Engineer, TechCorp</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Bangalore</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 3 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $80K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted :</span> 2 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4 ">
+                          <a href="apply.html" onclick="applyJob('Software Engineer, TechCorp', 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600  text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Software Engineer, TechCorp', 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save Software Engineer job">
+                                <i class="fas fa-bookmark"></i>&nbsp;  Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 2 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Data Scientist">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Data Scientist</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>DataLabs • Remote</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 4 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $90K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted :</span> 3 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Data Scientist', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Data Scientist', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save Data Scientist job">
+                                <i class="fas fa-bookmark"></i>&nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 3 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="UX Designer">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">UX Designer</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>CreativeWorks • Mumbai</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 2 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $70K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted :</span> 1 day ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4"> 
+                            <a href="apply.html" onclick="applyJob('UX Designer', 'Mumbai')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</button></a>
+                            <button onclick="saveJob('UX Designer', 'Mumbai')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 4 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Full Stack Developer">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Full Stack Developer</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>TechCorp • Bangalore</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 5 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $100K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted :</span> 4 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Full Stack Developer' , 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Full Stack Developer' , 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 5 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-white-glow hover:shadow-lg transition duration-200" data-title="Web Designer">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Web Designer</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>CreativeWorks • Mumbai</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 3 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $75K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted :</span> 2 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Web Designer', 'Mumbai')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Web Designer', 'Mumbai')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 6 -->
+                    <div class="job bg-gray-700 hidden p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Data Analyst">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Data Analyst</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>DataLabs • Remote</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 3 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $85K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted :</span> 5 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Data Analyst', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-600 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Data Analyst', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-600 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 7 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="AI Engineer">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">AI Engineer</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>TechCorp • Bangalore</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 4 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $95K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted : </span> 2 days ago</p> &nbsp;
+                            <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                                <a href="apply.html" onclick="applyJob('AI Engineer', 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                                <button onclick="saveJob('AI Engineer', 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                            </div>
+                    </div>
+                    <!-- Job 8 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Database Administrator">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Database Administrator</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>DataLabs • Remote</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 5 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $88K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted : </span>6 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Database Administrator', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Database Administrator', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 9 -->
+                    <div class="job bg-gray-700 p-6 hidden rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="DevOps Engineer">
+                        <h3 class="text-xl  text-blue-300 font-semibold mb-3">DevOps Engineer</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>TechCorp • Bangalore</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 4 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $92K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted :</span> 2 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('DevOps Engineer', 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('DevOps Engineer', 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 10 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Frontend Developer">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Frontend Developer</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>TechCorp • Remote</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 1 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $80K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted : </span>1 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" href="apply.html" onclick="applyJob('Frontend Developer', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 text-center font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Frontend Developer', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 11 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Backend Developer">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Backend Developer</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Nexlify • Bangalore</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 3 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $85K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted : </span>7 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Backend Developer', 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Backend Developer', 'Bangalore')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 12 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Product Manager">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Product Manager</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>InnovateCo • Remote</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 2 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $78K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted : </span>4 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Product Manager', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Product Manager', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 13 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Marketing Specialist">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Marketing Specialist</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>DataLabs • Mumbai</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 3 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $88K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted : </span>4 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Marketing Specialist', 'Mumbai')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Marketing Specialist', 'Mumbai')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save UX Designer job">
+                                <i class="fas fa-bookmark"></i> &nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Job 14 -->
+                    <div class="job bg-gray-700 p-6 rounded-lg shadow-sm hover:shadow-lg transition duration-200" data-title="Cybersecurity Analyst">
+                        <h3 class="text-xl text-blue-300 font-semibold mb-3">Cybersecurity Analyst</h3>
+                        <p class="text-white mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Cybersecurity • Remote</p>
+                        <p class="text-white mb-2"><i class="fas fa-briefcase mr-2"></i><span class="font-semibold">Experience :</span> 4 yrs</p>
+                        <p class="text-white mb-2"><i class="fas fa-dollar-sign mr-2"></i><span class="font-semibold">Salary :</span> $90K</p>
+                        <p class="text-white text-sm mb-4"><i class="fas fa-clock mr-2"></i><span class="font-semibold">Posted :</span> 3 days ago</p> &nbsp;
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+                            <a href="apply.html" onclick="applyJob('Cybersecurity Analyst', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 text-center transition duration-300 font-semibold text-sm sm:text-base">Apply Now</a>
+                            <button onclick="saveJob('Cybersecurity Analyst', 'Remote')" class="w-full sm:w-auto text-white hover:text-white bg-blue-800 rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 font-semibold text-sm sm:text-base" aria-label="Save Data Scientist job">
+                                <i class="fas fa-bookmark"></i>&nbsp; Save Job
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <p id="no-results" class="text-center text-white text-lg mt-10 hidden">No jobs found.</p>
+            </section>
+        </div>
+    </section>
+
+    <!-- Applied Jobs Section -->
+<!--  <section id="apply" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4">
+                <h2 class="text-2xl md:text-3xl text-white font-bold">Applied Jobs</h2>
+                <button id="toggle-applied-jobs" onclick="toggleAppliedJobs()" class=" w-full sm:w-auto bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 text-sm sm:text-base">Show Applied Jobs</button>
+            </div>
+            <div id="applied-jobs" class="hidden">
+                <ul id="applied-jobs-list" class="space-y-4"></ul>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Saved Jobs Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4">
+                <h2 class="text-2xl md:text-3xl text-white font-bold">Saved Jobs</h2>
+                <button id="toggle-saved-jobs" onclick="toggleSavedJobs()" class="w-full sm:w-auto bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 text-sm sm:text-base">Show Saved Jobs</button>
+            </div>
+            <div id="saved-jobs" class="hidden">
+                <ul id="saved-jobs-list" class="space-y-4"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Get in Touch</h2>
+            <p class="text-lg md:text-xl mb-6">Have questions about our job openings? We're here to help!</p>
+            <p class="mb-4 text-lg">Email: <a href="mailto:jobs@techjobs.com" class="underline hover:text-gray-200 transition duration-200">jobs@techjobs.com</a></p>
+            <p class="text-lg">Phone: <a href="tel:+1234567890" class="underline hover:text-gray-200 transition duration-200">(123) 456-7890</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-lg">© 2025 TechJobs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Job Search
+        function searchJobs() {
+            const searchBar = document.getElementById('search-bar').value.toLowerCase();
+            const jobListings = document.getElementById('job-listings');
+            const noResults = document.getElementById('no-results');
+            const jobs = document.querySelectorAll('.job');
+            
+            let hasResults = false;
+            jobListings.classList.remove('hidden');
+            noResults.classList.add('hidden');
+
+            jobs.forEach(job => {
+                const title = job.getAttribute('data-title').toLowerCase();
+                job.classList.toggle('hidden', searchBar && !title.includes(searchBar));
+                if (!job.classList.contains('hidden')) hasResults = true;
+            });
+
+            if (searchBar && !hasResults) {
+                noResults.classList.remove('hidden');
+            }
+        }
+
+        // Applied Jobs
+        let appliedJobs = [];
+        function applyJob(title, location) {
+            if (!appliedJobs.some(job => job.title === title)) {
+                appliedJobs.push({ title, location });
+                updateAppliedJobs();
+            }
+        }
+
+        function updateAppliedJobs() {
+            const appliedJobsList = document.getElementById('applied-jobs-list');
+            appliedJobsList.innerHTML = '';
+            appliedJobs.forEach(job => {
+                const li = document.createElement('li');
+                li.className = 'bg-gray-400 p-4 rounded-lg shadow-sm flex justify-between items-center';
+                li.innerHTML = `
+                    <span>${job.title} - ${job.location}</span>
+                    <button onclick="removeAppliedJob('${job.title}')" class="text-red-600 hover:text-red-700" aria-label="Remove ${job.title} from applied jobs">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                appliedJobsList.appendChild(li);
+            });
+
+            const toggleButton = document.getElementById('toggle-applied-jobs');
+            toggleButton.textContent = appliedJobs.length ? 'Show Applied Jobs' : 'No Applied Jobs';
+        }
+
+        function removeAppliedJob(title) {
+            appliedJobs = appliedJobs.filter(job => job.title !== title);
+            updateAppliedJobs();
+        }
+
+        function toggleAppliedJobs() {
+            const appliedJobsSection = document.getElementById('applied-jobs');
+            const toggleButton = document.getElementById('toggle-applied-jobs');
+            appliedJobsSection.classList.toggle('hidden');
+            toggleButton.textContent = appliedJobsSection.classList.contains('hidden') ? 'Show Applied Jobs' : 'Hide Applied Jobs';
+        }
+
+        // Saved Jobs
+        let savedJobs = [];
+        function saveJob(title, location) {
+            if (!savedJobs.some(job => job.title === title)) {
+                savedJobs.push({ title, location });
+                updateSavedJobs();
+            }
+        }
+
+        function updateSavedJobs() {
+            const savedJobsList = document.getElementById('saved-jobs-list');
+            savedJobsList.innerHTML = '';
+            savedJobs.forEach(job => {
+                const li = document.createElement('li');
+                li.className = 'bg-gray-400 p-4 rounded-lg shadow-sm flex justify-between items-center';
+                li.innerHTML = `
+                    <span>${job.title} - ${job.location}</span>
+                    <button onclick="removeSavedJob('${job.title}')" class="text-red-600 hover:text-red-700" aria-label="Remove ${job.title} from saved jobs">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                savedJobsList.appendChild(li);
+            });
+
+            const toggleButton = document.getElementById('toggle-saved-jobs');
+            toggleButton.textContent = savedJobs.length ? 'Show Saved Jobs' : 'No Saved Jobs';
+        }
+
+        function removeSavedJob(title) {
+            savedJobs = savedJobs.filter(job => job.title !== title);
+            updateSavedJobs();
+        }
+
+        function toggleSavedJobs() {
+            const savedJobsSection = document.getElementById('saved-jobs');
+            const toggleButton = document.getElementById('toggle-saved-jobs');
+            savedJobsSection.classList.toggle('hidden');
+            toggleButton.textContent = savedJobsSection.classList.contains('hidden') ? 'Show Saved Jobs' : 'Hide Saved Jobs';
+        }
+    </script>
+
+    <!-- Animations -->
+    <style>
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 0.6s ease-out forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-400 { animation-delay: 0.4s; }
+    </style>
+</body>
+</html>
